@@ -1,9 +1,14 @@
+import kotlin.system.measureTimeMillis
+import kotlin.time.measureTime
+
 fun main(args: Array<String>) {
     println("Willkommen zur Einmaleins Challenge by Niko")
 
     println("Welche Reihe möchtest du haben?")
 
     val reihe = readLine()!!.toInt()
+
+    val timeMillis = measureTimeMillis {
 
     // for(reihe in 1..10){
         var b = 1
@@ -54,4 +59,9 @@ fun main(args: Array<String>) {
                 "       .-'-./  \\.-'-.\n" +
                 "      (___.'    '.___)")
    // }
+    }
+
+    val sec = (timeMillis/1000).toInt()
+
+    println("-> Du hast: $sec Sekunden benötigt <-")
 }
